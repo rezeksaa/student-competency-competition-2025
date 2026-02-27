@@ -16,11 +16,31 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
 
   a {
     color: #58a6ff !important;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
 
   h1, h2, h3 {
     color: #f0f6fc !important;
     border-bottom-color: #30363d !important;
+  }
+
+  .project-link {
+    font-size: 0.85em;
+    margin-left: 10px;
+    padding: 2px 8px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    color: #8b949e !important;
+  }
+
+  .project-link:hover {
+    color: #58a6ff !important;
+    border-color: #58a6ff;
   }
 </style>
 
@@ -56,7 +76,13 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
 
   <h3 style="color: #f0f6fc; margin-bottom: 8px;">🏙️ City Level</h3>
   <ul style="list-style-type: none; padding-left: 0; margin-bottom: 24px;">
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 01:</strong> [Project Name]</li>
+    <li style="padding: 10px; border-bottom: 1px solid #21262d; display: flex; align-items: center; justify-content: space-between;">
+      <span>• <strong>System 01:</strong> Geegy</span>
+      <div>
+        <a href="./problems/City/" class="project-link">📄 Problem</a>
+        <a href="./solutions/City/" class="project-link">💻 Answer</a>
+      </div>
+    </li>
     <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 02:</strong> [Project Name]</li>
     <li style="padding: 10px;">• <strong>System 03:</strong> [Project Name]</li>
   </ul>
