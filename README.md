@@ -1,4 +1,4 @@
-&lt;div align="center"&gt;
+<div align="center">
 
 # 🏆 Student Competency Competition 2025
 
@@ -13,7 +13,7 @@
 **Muhammad Rezky Eksatama**  
 *SMK Telkom Malang*
 
-&lt;/div&gt;
+</div>
 
 ---
 
@@ -45,7 +45,7 @@ Built **9 complete business solutions** across three competitive tiers, advancin
 <div align="center">
 
 | 💻 Desktop | 📱 Mobile | ⚙️ Backend |
-|:----------:|:---------:|:----------:|
+|----------|---------|----------|
 | C# | Kotlin | ASP.NET |
 
 </div>
