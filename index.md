@@ -75,13 +75,6 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     <li style="padding: 10px;">• <strong>System 09:</strong> [Project Name]</li>
   </ul>
 
-  <h2 style="font-size: 1.5em; font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid #30363d; margin-top: 32px; margin-bottom: 16px;">💡 Core Competencies</h2>
-  <ul style="padding-left: 20px;">
-    <li style="margin-bottom: 12px;"><strong>Full-stack Delivery:</strong> End-to-end ownership of Desktop, Mobile, and API layers.</li>
-    <li style="margin-bottom: 12px;"><strong>Solo Execution:</strong> High-pressure individual entry, managing all lifecycle phases.</li>
-    <li style="margin-bottom: 12px;"><strong>Scalable Design:</strong> Solutions evolved in complexity to meet National-level requirements.</li>
-  </ul>
-
   <div style="text-align: center; padding: 60px 0; opacity: 0.8;">
     <a href="mailto:mrezky.eksatama@gmail.com" style="text-decoration: none; font-weight: 600;">📧 mrezky.eksatama@gmail.com</a>
   </div>
