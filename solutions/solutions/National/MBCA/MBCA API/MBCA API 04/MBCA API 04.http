@@ -1,6 +1,0 @@
-@MBCA_API_04_HostAddress = http://localhost:5043
-
-GET {{MBCA_API_04_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
