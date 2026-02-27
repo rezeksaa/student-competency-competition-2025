@@ -1,4 +1,9 @@
-<div align="center">
+---
+layout: default
+title: Student Competency Competition 2025
+---
+
+&lt;div align="center"&gt;
 
 # 🏆 Student Competency Competition 2025
 
@@ -9,64 +14,59 @@
 **Muhammad Rezky Eksatama**  
 *SMK Telkom Malang*
 
-</div>
+&lt;/div&gt;
 
 ---
 
-Built **9 complete business solutions** across three competitive tiers, advancing from city to national level through scalable architecture real-world business applicability.
-
-## Progression
-
-| Level | Systems | Result |
-|-------|---------|--------|
-| City | 3 systems | ✅ Advanced |
-| Provincial | 3 systems | ✅ Advanced |
-| National | 3 systems | 🥇 1st Place — Gold Medal |
+Built **9 complete business solutions** across three competitive tiers, advancing from city to national level through scalable architecture and real-world business applicability.
 
 ---
 
-<div align="center">
+&lt;div align="center"&gt;
 
 ## 🥇 Achievement
 
 **1st Place — Gold Medal**  
 *National Level, Student Competency Competition 2025*
 
-</div>
+&lt;/div&gt;
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
+&lt;div align="center"&gt;
 
 | 💻 Desktop | 📱 Mobile | ⚙️ Backend |
-|----------|---------|----------|
+|:----------:|:---------:|:----------:|
 | C# | Kotlin | ASP.NET |
 
-</div>
+&lt;/div&gt;
 
 ---
 
 ## 📦 Systems Portfolio
 
 ### 🏙️ City Level
+
 | # | Name | Platform | Description |
-|---|------|----------|-------------|
-| 1 | a|a | a|
+|:-:|:-----|:--------:|:------------|
+| 1 | | | |
 | 2 | | | |
 | 3 | | | |
 
 ### 🏛️ Provincial Level
+
 | # | Name | Platform | Description |
-|---|------|----------|-------------|
+|:-:|:-----|:--------:|:------------|
 | 4 | | | |
 | 5 | | | |
 | 6 | | | |
 
 ### 🏅 National Level
+
 | # | Name | Platform | Description |
-|---|------|----------|-------------|
+|:-:|:-----|:--------:|:------------|
 | 7 | | | |
 | 8 | | | |
 | 9 | | | |
@@ -76,16 +76,15 @@ Built **9 complete business solutions** across three competitive tiers, advancin
 ## 💡 Core Competencies
 
 | Skill | Demonstrated Through |
-|-------|-------------------|
+|:------|:-------------------|
 | **Full-stack delivery** | Desktop, mobile, and API layers across 9 systems |
-| **Solo execution** | Individual entry — end-to-end ownership |
+| **Solo execution** | Individual entry, end-to-end ownership |
 | **Scalable design** | Solutions evolved in complexity across competitive tiers |
-| **Business translation** | Real-world problems → working software |
 
 ---
 
-<div align="center">
+&lt;div align="center"&gt;
 
 📧 mrezky.eksatama@gmail.com
 
-</div>
+&lt;/div&gt;
