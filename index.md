@@ -28,19 +28,73 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-color: #30363d !important;
   }
 
+  /* Expandable Project Styling */
+  details {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+  }
+
+  details[open] {
+    border-color: #58a6ff;
+  }
+
+  summary {
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none; /* Hides the default arrow in some browsers */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Custom arrow */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "▼";
+    font-size: 0.8em;
+    color: #8b949e;
+    transition: transform 0.2s;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+    color: #58a6ff;
+  }
+
+  .expand-content {
+    padding: 12px;
+    border-top: 1px solid #30363d;
+    background-color: #0d1117;
+    display: flex;
+    gap: 10px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
   .project-link {
     font-size: 0.85em;
-    margin-left: 10px;
-    padding: 2px 8px;
+    padding: 6px 12px;
     background: #21262d;
     border: 1px solid #30363d;
-    border-radius: 12px;
-    color: #8b949e !important;
+    border-radius: 6px;
+    color: #c9d1d9 !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .project-link:hover {
+    background: #30363d;
+    border-color: #8b949e;
     color: #58a6ff !important;
-    border-color: #58a6ff;
+    text-decoration: none;
   }
 </style>
 
@@ -74,32 +128,75 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
 
   <h2 style="font-size: 1.5em; font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid #30363d; margin-top: 32px; margin-bottom: 16px;">📦 Systems Portfolio</h2>
 
-  <h3 style="color: #f0f6fc; margin-bottom: 8px;">🏙️ City Level</h3>
-  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 24px;">
-    <li style="padding: 10px; border-bottom: 1px solid #21262d; display: flex; align-items: center; justify-content: space-between;">
-      <span>• <strong>System 01:</strong> Geegy</span>
-      <div>
-        <a href="./problems/City/" class="project-link">📄 Problem</a>
-        <a href="./solutions/City/" class="project-link">💻 Answer</a>
-      </div>
-    </li>
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 02:</strong> [Project Name]</li>
-    <li style="padding: 10px;">• <strong>System 03:</strong> [Project Name]</li>
-  </ul>
+  <h3 style="color: #f0f6fc; margin-bottom: 12px;">🏙️ City Level</h3>
+  
+  <details>
+    <summary>System 01: Geegy</summary>
+    <div class="expand-content">
+      <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
+      <a href="./solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
+    </div>
+  </details>
 
-  <h3 style="color: #f0f6fc; margin-bottom: 8px;">🏛️ Provincial Level</h3>
-  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 24px;">
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 04:</strong> [Project Name]</li>
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 05:</strong> [Project Name]</li>
-    <li style="padding: 10px;">• <strong>System 06:</strong> [Project Name]</li>
-  </ul>
+  <details>
+    <summary>System 02: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Files pending upload...</p>
+    </div>
+  </details>
 
-  <h3 style="color: #f0f6fc; margin-bottom: 8px;">🏅 National Level</h3>
-  <ul style="list-style-type: none; padding-left: 0; margin-bottom: 24px;">
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 07:</strong> [Project Name]</li>
-    <li style="padding: 10px; border-bottom: 1px solid #21262d;">• <strong>System 08:</strong> [Project Name]</li>
-    <li style="padding: 10px;">• <strong>System 09:</strong> [Project Name]</li>
-  </ul>
+  <details>
+    <summary>System 03: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Files pending upload...</p>
+    </div>
+  </details>
+
+  <h3 style="color: #f0f6fc; margin-top: 24px; margin-bottom: 12px;">🏛️ Provincial Level</h3>
+  
+  <details>
+    <summary>System 04: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>System 05: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>System 06: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+    </div>
+  </details>
+
+  <h3 style="color: #f0f6fc; margin-top: 24px; margin-bottom: 12px;">🏅 National Level</h3>
+  
+  <details>
+    <summary>System 07: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>System 08: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>System 09: [Project Name]</summary>
+    <div class="expand-content">
+      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+    </div>
+  </details>
 
   <div style="text-align: center; padding: 60px 0; opacity: 0.8;">
     <a href="mailto:mrezky.eksatama@gmail.com" style="text-decoration: none; font-weight: 600;">📧 mrezky.eksatama@gmail.com</a>
