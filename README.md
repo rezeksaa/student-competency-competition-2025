@@ -4,11 +4,7 @@
 
 **IT Software Solutions for Business — National Gold Medal**
 
-&lt;/div&gt;
-
 ---
-
-&lt;div align="center"&gt;
 
 **Muhammad Rezky Eksatama**  
 *SMK Telkom Malang*
@@ -57,7 +53,7 @@ Built **9 complete business solutions** across three competitive tiers, advancin
 ### 🏙️ City Level
 | # | Name | Platform | Description |
 |---|------|----------|-------------|
-| 1 | | | |
+| 1 | a|a | a|
 | 2 | | | |
 | 3 | | | |
 
