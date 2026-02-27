@@ -28,7 +28,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
 
   <div style="text-align: center; margin-bottom: 40px;">
     <h1 style="font-size: 2.5em; font-weight: 600; margin-bottom: 8px; border: none;">🏆 Student Competency Competition 2025</h1>
-    <p style="font-size: 1.2em; color: #8b949e; margin-top: 0;">IT Software Solutions for Business — <span style="color: #f2cc60; font-weight: 600;">National Gold Medal</span></p>
+    <p style="font-size: 1.2em; color: #8b949e; margin-top: 0;">IT Software Solutions for Business | <span style="color: #f2cc60; font-weight: 600;">National Gold Medal</span></p>
     <div style="height: 1px; background-color: #30363d; width: 100%; margin: 24px 0;"></div>
     <h2 style="font-size: 1.75em; margin-bottom: 4px; border: none;">Muhammad Rezky Eksatama</h2>
     <p style="color: #8b949e; margin-top: 0;"><em>SMK Telkom Malang</em></p>
