@@ -1,0 +1,80 @@
+[
+  {
+    "ContainingType": "MBCA_API_04.Controllers.Auth",
+    "Method": "login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "MBCA_API_04.Controllers.Auth\u002BloginBody",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MBCA_API_04.Controllers.Auth",
+    "Method": "register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "MBCA_API_04.Controllers.Auth\u002BregisterBody",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MBCA_API_04.Controllers.ValuesController",
+    "Method": "getEvent",
+    "RelativePath": "api/Events",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MBCA_API_04.Controllers.ValuesController",
+    "Method": "Get",
+    "RelativePath": "api/Prefix",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MBCA_API_04.Controllers.ValuesController",
+    "Method": "postTicket",
+    "RelativePath": "api/Ticket",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "MBCA_API_04.Controllers.ValuesController\u002BTicketBody",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MBCA_API_04.Controllers.ValuesController",
+    "Method": "getTicket",
+    "RelativePath": "api/Ticket",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

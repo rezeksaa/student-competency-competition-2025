@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EsemkaSchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AssessmentComponents">
+          <Key>
+            <PropertyRef Name="ComponentID" />
+          </Key>
+          <Property Name="ComponentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssignmentID" Type="int" />
+          <Property Name="ComponentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weight" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" />
+          <Property Name="RecordedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassName" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeroomTeacherID" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentScores">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="ComponentID" Type="int" />
+          <Property Name="Score" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubjectName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TeachingAssignments">
+          <Key>
+            <PropertyRef Name="AssignmentID" />
+          </Key>
+          <Property Name="AssignmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeacherID" Type="int" />
+          <Property Name="SubjectID" Type="int" />
+          <Property Name="ClassID" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClassID" Type="int" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Assessmen__Assig__4316F928">
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="0..1" />
+          <End Role="AssessmentComponents" Type="Self.AssessmentComponents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeachingAssignments">
+              <PropertyRef Name="AssignmentID" />
+            </Principal>
+            <Dependent Role="AssessmentComponents">
+              <PropertyRef Name="AssignmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__Recor__440B1D61">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="RecordedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__Stude__44FF419A">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Classes__Homeroo__45F365D3">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Classes">
+              <PropertyRef Name="HomeroomTeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentSc__Compo__46E78A0C">
+          <End Role="AssessmentComponents" Type="Self.AssessmentComponents" Multiplicity="0..1" />
+          <End Role="StudentScores" Type="Self.StudentScores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssessmentComponents">
+              <PropertyRef Name="ComponentID" />
+            </Principal>
+            <Dependent Role="StudentScores">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentSc__Stude__47DBAE45">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="StudentScores" Type="Self.StudentScores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StudentScores">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Class__48CFD27E">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Subje__49C3F6B7">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Teach__4AB81AF0">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsemkaSchoolModelStoreContainer">
+          <EntitySet Name="AssessmentComponents" EntityType="Self.AssessmentComponents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentScores" EntityType="Self.StudentScores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeachingAssignments" EntityType="Self.TeachingAssignments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Assessmen__Assig__4316F928" Association="Self.FK__Assessmen__Assig__4316F928">
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+            <End Role="AssessmentComponents" EntitySet="AssessmentComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__Recor__440B1D61" Association="Self.FK__Attendanc__Recor__440B1D61">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__Stude__44FF419A" Association="Self.FK__Attendanc__Stude__44FF419A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Classes__Homeroo__45F365D3" Association="Self.FK__Classes__Homeroo__45F365D3">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Classes" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentSc__Compo__46E78A0C" Association="Self.FK__StudentSc__Compo__46E78A0C">
+            <End Role="AssessmentComponents" EntitySet="AssessmentComponents" />
+            <End Role="StudentScores" EntitySet="StudentScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentSc__Stude__47DBAE45" Association="Self.FK__StudentSc__Stude__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="StudentScores" EntitySet="StudentScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Class__48CFD27E" Association="Self.FK__TeachingA__Class__48CFD27E">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Subje__49C3F6B7" Association="Self.FK__TeachingA__Subje__49C3F6B7">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Teach__4AB81AF0" Association="Self.FK__TeachingA__Teach__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EsemkaSchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssessmentComponent">
+          <Key>
+            <PropertyRef Name="ComponentID" />
+          </Key>
+          <Property Name="ComponentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssignmentID" Type="Int32" />
+          <Property Name="ComponentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Decimal" Precision="5" Scale="2" />
+          <NavigationProperty Name="TeachingAssignment" Relationship="Self.FK__Assessmen__Assig__4316F928" FromRole="AssessmentComponents" ToRole="TeachingAssignments" />
+          <NavigationProperty Name="StudentScores" Relationship="Self.FK__StudentSc__Compo__46E78A0C" FromRole="AssessmentComponents" ToRole="StudentScores" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RecordedBy" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Attendanc__Recor__440B1D61" FromRole="Attendance" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK__Attendanc__Stude__44FF419A" FromRole="Attendance" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomeroomTeacherID" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Classes__Homeroo__45F365D3" FromRole="Classes" ToRole="Users" />
+          <NavigationProperty Name="TeachingAssignments" Relationship="Self.FK__TeachingA__Class__48CFD27E" FromRole="Classes" ToRole="TeachingAssignments" />
+        </EntityType>
+        <EntityType Name="StudentScore">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentID" Type="Int32" />
+          <Property Name="ComponentID" Type="Int32" />
+          <Property Name="Score" Type="Decimal" Precision="5" Scale="2" />
+          <NavigationProperty Name="AssessmentComponent" Relationship="Self.FK__StudentSc__Compo__46E78A0C" FromRole="StudentScores" ToRole="AssessmentComponents" />
+          <NavigationProperty Name="User" Relationship="Self.FK__StudentSc__Stude__47DBAE45" FromRole="StudentScores" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TeachingAssignments" Relationship="Self.FK__TeachingA__Subje__49C3F6B7" FromRole="Subjects" ToRole="TeachingAssignments" />
+        </EntityType>
+        <EntityType Name="TeachingAssignment">
+          <Key>
+            <PropertyRef Name="AssignmentID" />
+          </Key>
+          <Property Name="AssignmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherID" Type="Int32" />
+          <Property Name="SubjectID" Type="Int32" />
+          <Property Name="ClassID" Type="Int32" />
+          <NavigationProperty Name="AssessmentComponents" Relationship="Self.FK__Assessmen__Assig__4316F928" FromRole="TeachingAssignments" ToRole="AssessmentComponents" />
+          <NavigationProperty Name="Class" Relationship="Self.FK__TeachingA__Class__48CFD27E" FromRole="TeachingAssignments" ToRole="Classes" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK__TeachingA__Subje__49C3F6B7" FromRole="TeachingAssignments" ToRole="Subjects" />
+          <NavigationProperty Name="User" Relationship="Self.FK__TeachingA__Teach__4AB81AF0" FromRole="TeachingAssignments" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClassID" Type="Int32" />
+          <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Attendances" Relationship="Self.FK__Attendanc__Recor__440B1D61" FromRole="Users" ToRole="Attendance" />
+          <NavigationProperty Name="Attendances1" Relationship="Self.FK__Attendanc__Stude__44FF419A" FromRole="Users" ToRole="Attendance" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Classes__Homeroo__45F365D3" FromRole="Users" ToRole="Classes" />
+          <NavigationProperty Name="StudentScores" Relationship="Self.FK__StudentSc__Stude__47DBAE45" FromRole="Users" ToRole="StudentScores" />
+          <NavigationProperty Name="TeachingAssignments" Relationship="Self.FK__TeachingA__Teach__4AB81AF0" FromRole="Users" ToRole="TeachingAssignments" />
+        </EntityType>
+        <Association Name="FK__Assessmen__Assig__4316F928">
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignment" Multiplicity="0..1" />
+          <End Role="AssessmentComponents" Type="Self.AssessmentComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeachingAssignments">
+              <PropertyRef Name="AssignmentID" />
+            </Principal>
+            <Dependent Role="AssessmentComponents">
+              <PropertyRef Name="AssignmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentSc__Compo__46E78A0C">
+          <End Role="AssessmentComponents" Type="Self.AssessmentComponent" Multiplicity="0..1" />
+          <End Role="StudentScores" Type="Self.StudentScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssessmentComponents">
+              <PropertyRef Name="ComponentID" />
+            </Principal>
+            <Dependent Role="StudentScores">
+              <PropertyRef Name="ComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__Recor__440B1D61">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="RecordedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Attendanc__Stude__44FF419A">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Classes__Homeroo__45F365D3">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Classes" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Classes">
+              <PropertyRef Name="HomeroomTeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Class__48CFD27E">
+          <End Role="Classes" Type="Self.Class" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentSc__Stude__47DBAE45">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="StudentScores" Type="Self.StudentScore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StudentScores">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Subje__49C3F6B7">
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeachingA__Teach__4AB81AF0">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TeachingAssignments" Type="Self.TeachingAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TeachingAssignments">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsemkaSchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssessmentComponents" EntityType="Self.AssessmentComponent" />
+          <EntitySet Name="Attendances" EntityType="Self.Attendance" />
+          <EntitySet Name="Classes" EntityType="Self.Class" />
+          <EntitySet Name="StudentScores" EntityType="Self.StudentScore" />
+          <EntitySet Name="Subjects" EntityType="Self.Subject" />
+          <EntitySet Name="TeachingAssignments" EntityType="Self.TeachingAssignment" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Assessmen__Assig__4316F928" Association="Self.FK__Assessmen__Assig__4316F928">
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+            <End Role="AssessmentComponents" EntitySet="AssessmentComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentSc__Compo__46E78A0C" Association="Self.FK__StudentSc__Compo__46E78A0C">
+            <End Role="AssessmentComponents" EntitySet="AssessmentComponents" />
+            <End Role="StudentScores" EntitySet="StudentScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__Recor__440B1D61" Association="Self.FK__Attendanc__Recor__440B1D61">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Attendanc__Stude__44FF419A" Association="Self.FK__Attendanc__Stude__44FF419A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Classes__Homeroo__45F365D3" Association="Self.FK__Classes__Homeroo__45F365D3">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Classes" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Class__48CFD27E" Association="Self.FK__TeachingA__Class__48CFD27E">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentSc__Stude__47DBAE45" Association="Self.FK__StudentSc__Stude__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="StudentScores" EntitySet="StudentScores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Subje__49C3F6B7" Association="Self.FK__TeachingA__Subje__49C3F6B7">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeachingA__Teach__4AB81AF0" Association="Self.FK__TeachingA__Teach__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TeachingAssignments" EntitySet="TeachingAssignments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EsemkaSchoolModelStoreContainer" CdmEntityContainer="EsemkaSchoolEntities">
+          <EntitySetMapping Name="AssessmentComponents">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.AssessmentComponent">
+              <MappingFragment StoreEntitySet="AssessmentComponents">
+                <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+                <ScalarProperty Name="AssignmentID" ColumnName="AssignmentID" />
+                <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RecordedBy" ColumnName="RecordedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.Class">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="HomeroomTeacherID" ColumnName="HomeroomTeacherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentScores">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.StudentScore">
+              <MappingFragment StoreEntitySet="StudentScores">
+                <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeachingAssignments">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.TeachingAssignment">
+              <MappingFragment StoreEntitySet="TeachingAssignments">
+                <ScalarProperty Name="AssignmentID" ColumnName="AssignmentID" />
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EsemkaSchoolModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

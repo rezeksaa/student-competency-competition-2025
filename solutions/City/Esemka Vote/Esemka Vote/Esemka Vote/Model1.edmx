@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EsemkaVoteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="varchar" MaxLength="50" />
+          <Property Name="DivisionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="VotingCandidate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VotingHeaderId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VotingDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VotedCandidateId" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="VotingHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Employee__Divisi__4BAC3F29">
+          <End Role="Division" Type="Self.Division" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="DivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingCan__Emplo__5165187F">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingCandidate">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingCan__Votin__5070F446">
+          <End Role="VotingHeader" Type="Self.VotingHeader" Multiplicity="1" />
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VotingHeader">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingCandidate">
+              <PropertyRef Name="VotingHeaderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingDet__Emplo__5535A963">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="VotingDetail" Type="Self.VotingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingDetail">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingDet__Voted__5441852A">
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="1" />
+          <End Role="VotingDetail" Type="Self.VotingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VotingCandidate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingDetail">
+              <PropertyRef Name="VotedCandidateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsemkaVoteModelStoreContainer">
+          <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VotingCandidate" EntityType="Self.VotingCandidate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VotingDetail" EntityType="Self.VotingDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VotingHeader" EntityType="Self.VotingHeader" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Employee__Divisi__4BAC3F29" Association="Self.FK__Employee__Divisi__4BAC3F29">
+            <End Role="Division" EntitySet="Division" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingCan__Emplo__5165187F" Association="Self.FK__VotingCan__Emplo__5165187F">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="VotingCandidate" EntitySet="VotingCandidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingCan__Votin__5070F446" Association="Self.FK__VotingCan__Votin__5070F446">
+            <End Role="VotingHeader" EntitySet="VotingHeader" />
+            <End Role="VotingCandidate" EntitySet="VotingCandidate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingDet__Emplo__5535A963" Association="Self.FK__VotingDet__Emplo__5535A963">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="VotingDetail" EntitySet="VotingDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingDet__Voted__5441852A" Association="Self.FK__VotingDet__Voted__5441852A">
+            <End Role="VotingCandidate" EntitySet="VotingCandidate" />
+            <End Role="VotingDetail" EntitySet="VotingDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EsemkaVoteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Divisi__4BAC3F29" FromRole="Division" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DivisionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Division" Relationship="Self.FK__Employee__Divisi__4BAC3F29" FromRole="Employee" ToRole="Division" />
+          <NavigationProperty Name="VotingCandidates" Relationship="Self.FK__VotingCan__Emplo__5165187F" FromRole="Employee" ToRole="VotingCandidate" />
+          <NavigationProperty Name="VotingDetails" Relationship="Self.FK__VotingDet__Emplo__5535A963" FromRole="Employee" ToRole="VotingDetail" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VotingCandidate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VotingHeaderId" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__VotingCan__Emplo__5165187F" FromRole="VotingCandidate" ToRole="Employee" />
+          <NavigationProperty Name="VotingHeader" Relationship="Self.FK__VotingCan__Votin__5070F446" FromRole="VotingCandidate" ToRole="VotingHeader" />
+          <NavigationProperty Name="VotingDetails" Relationship="Self.FK__VotingDet__Voted__5441852A" FromRole="VotingCandidate" ToRole="VotingDetail" />
+        </EntityType>
+        <EntityType Name="VotingDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VotedCandidateId" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__VotingDet__Emplo__5535A963" FromRole="VotingDetail" ToRole="Employee" />
+          <NavigationProperty Name="VotingCandidate" Relationship="Self.FK__VotingDet__Voted__5441852A" FromRole="VotingDetail" ToRole="VotingCandidate" />
+        </EntityType>
+        <EntityType Name="VotingHeader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="VotingCandidates" Relationship="Self.FK__VotingCan__Votin__5070F446" FromRole="VotingHeader" ToRole="VotingCandidate" />
+        </EntityType>
+        <Association Name="FK__Employee__Divisi__4BAC3F29">
+          <End Role="Division" Type="Self.Division" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Division">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="DivisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingCan__Emplo__5165187F">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingCandidate">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingDet__Emplo__5535A963">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="VotingDetail" Type="Self.VotingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingDetail">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingCan__Votin__5070F446">
+          <End Role="VotingHeader" Type="Self.VotingHeader" Multiplicity="1" />
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VotingHeader">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingCandidate">
+              <PropertyRef Name="VotingHeaderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VotingDet__Voted__5441852A">
+          <End Role="VotingCandidate" Type="Self.VotingCandidate" Multiplicity="1" />
+          <End Role="VotingDetail" Type="Self.VotingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VotingCandidate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VotingDetail">
+              <PropertyRef Name="VotedCandidateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsemkaVoteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Divisions" EntityType="Self.Division" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="VotingCandidates" EntityType="Self.VotingCandidate" />
+          <EntitySet Name="VotingDetails" EntityType="Self.VotingDetail" />
+          <EntitySet Name="VotingHeaders" EntityType="Self.VotingHeader" />
+          <AssociationSet Name="FK__Employee__Divisi__4BAC3F29" Association="Self.FK__Employee__Divisi__4BAC3F29">
+            <End Role="Division" EntitySet="Divisions" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingCan__Emplo__5165187F" Association="Self.FK__VotingCan__Emplo__5165187F">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="VotingCandidate" EntitySet="VotingCandidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingDet__Emplo__5535A963" Association="Self.FK__VotingDet__Emplo__5535A963">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="VotingDetail" EntitySet="VotingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingCan__Votin__5070F446" Association="Self.FK__VotingCan__Votin__5070F446">
+            <End Role="VotingHeader" EntitySet="VotingHeaders" />
+            <End Role="VotingCandidate" EntitySet="VotingCandidates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VotingDet__Voted__5441852A" Association="Self.FK__VotingDet__Voted__5441852A">
+            <End Role="VotingCandidate" EntitySet="VotingCandidates" />
+            <End Role="VotingDetail" EntitySet="VotingDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EsemkaVoteModelStoreContainer" CdmEntityContainer="EsemkaVoteEntities">
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.Division">
+              <MappingFragment StoreEntitySet="Division">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VotingCandidates">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.VotingCandidate">
+              <MappingFragment StoreEntitySet="VotingCandidate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VotingHeaderId" ColumnName="VotingHeaderId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VotingDetails">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.VotingDetail">
+              <MappingFragment StoreEntitySet="VotingDetail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VotedCandidateId" ColumnName="VotedCandidateId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VotingHeaders">
+            <EntityTypeMapping TypeName="EsemkaVoteModel.VotingHeader">
+              <MappingFragment StoreEntitySet="VotingHeader">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

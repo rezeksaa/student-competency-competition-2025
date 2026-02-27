@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/border_item"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job name"
+        android:id="@+id/tvJobName"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/tvCompany" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/tvLocation" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/tvExpirience" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btnApply"
+            android:layout_height="wrap_content"
+            android:text="Apply" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="50dp"
+            android:text="Save"
+            android:id="@+id/btnSave" />
+
+
+    </LinearLayout>
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

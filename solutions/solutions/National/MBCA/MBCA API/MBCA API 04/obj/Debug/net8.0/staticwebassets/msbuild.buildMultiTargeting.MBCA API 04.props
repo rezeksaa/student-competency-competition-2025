@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MBCA API 04.props" />
+</Project>
