@@ -21,7 +21,7 @@ Developed business solutions spanning desktop applications, mobile apps, and API
 |-------|---------|--------|
 | City | 3 systems | ✅ Advanced |
 | Provincial | 3 systems | ✅ Advanced |
-| National | 3 systems | ✅ Finalist |
+| National | 3 systems | 🥇 1st Place — Gold Medal |
 
 ---
 
