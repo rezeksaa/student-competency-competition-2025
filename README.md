@@ -1,19 +1,23 @@
-# Student Competency Competition 2025
+&lt;div align="center"&gt;
 
-## Competitor
+# 🏆 Student Competency Competition 2025
+
+**IT Software Solutions for Business — National Gold Medal**
+
+&lt;/div&gt;
+
+---
+
+&lt;div align="center"&gt;
+
 **Muhammad Rezky Eksatama**  
-SMK Telkom Malang
+*SMK Telkom Malang*
+
+&lt;/div&gt;
 
 ---
 
-## Competition Overview
-
-**Theme:** IT Software Solutions for Business  
-**Scope:** 9 systems across 3 competitive levels — City → Provincial → National
-
-Developed business solutions spanning desktop applications, mobile apps, and API integrations. Advanced through each tier by demonstrating scalable architecture and real-world business applicability.
-
----
+Built **9 complete business solutions** across three competitive tiers, advancing from city to national level through scalable architecture real-world business applicability.
 
 ## Progression
 
@@ -25,57 +29,67 @@ Developed business solutions spanning desktop applications, mobile apps, and API
 
 ---
 
-## Technical Stack
+<div align="center">
 
-| Layer | Technologies |
-|-------|-------------|
-| Desktop | C# |
-| Mobile | Kotlin |
-| Backend/API | ASP.NET |
+## 🥇 Achievement
+
+**1st Place — Gold Medal**  
+*National Level, Student Competency Competition 2025*
+
+</div>
 
 ---
 
-## Systems
+## 🛠️ Tech Stack
 
-### City Level
+<div align="center">
 
-| # | Name | Type | Description |
-|---|------|------|-------------|
+| 💻 Desktop | 📱 Mobile | ⚙️ Backend |
+|:----------:|:---------:|:----------:|
+| C# | Kotlin | ASP.NET |
+
+</div>
+
+---
+
+## 📦 Systems Portfolio
+
+### 🏙️ City Level
+| # | Name | Platform | Description |
+|---|------|----------|-------------|
 | 1 | | | |
 | 2 | | | |
 | 3 | | | |
 
----
-
-### Provincial Level
-
-| # | Name | Type | Description |
-|---|------|------|-------------|
+### 🏛️ Provincial Level
+| # | Name | Platform | Description |
+|---|------|----------|-------------|
 | 4 | | | |
 | 5 | | | |
 | 6 | | | |
 
----
-
-### National Level
-
-| # | Name | Type | Description |
-|---|------|------|-------------|
+### 🏅 National Level
+| # | Name | Platform | Description |
+|---|------|----------|-------------|
 | 7 | | | |
 | 8 | | | |
 | 9 | | | |
 
 ---
 
-## Key Competencies Demonstrated
+## 💡 Core Competencies
 
-- **Full-stack development** — Desktop, mobile, and API layers
-- **Individual delivery** — Solo development of 9 production-ready systems
-- **Scalable architecture** — Solutions evolved in complexity across levels
+| Skill | Demonstrated Through |
+|-------|-------------------|
+| **Full-stack delivery** | Desktop, mobile, and API layers across 9 systems |
+| **Solo execution** | Individual entry — end-to-end ownership |
+| **Scalable design** | Solutions evolved in complexity across competitive tiers |
+| **Business translation** | Real-world problems → working software |
 
 ---
 
-## Contact
+<div align="center">
 
-Muhammad Rezky Eksatama  
-mrezky.eksatama@gmail.com
+📧 mrezky.eksatama@gmail.com
+
+</div>
