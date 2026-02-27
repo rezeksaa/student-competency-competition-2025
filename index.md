@@ -139,16 +139,18 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   </details>
 
   <details>
-    <summary>System 02: [Project Name]</summary>
+    <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Files pending upload...</p>
+      <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
+      <a href="./solutions/City/Esemka Library" class="project-link"><span>💻</span> View Source Code</a>
     </div>
   </details>
 
   <details>
-    <summary>System 03: [Project Name]</summary>
+    <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Files pending upload...</p>
+      <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
+      <a href="./solutions/City/Esemka Vote/" class="project-link"><span>💻</span> View Source Code</a>
     </div>
   </details>
 
