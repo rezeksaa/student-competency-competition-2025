@@ -165,10 +165,10 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/EsemkaLibrary" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-1" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-2" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-3" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary.png" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-1.png" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library Screenshot" class="project-screenshot">
       <div class="project-desc">A desktop application used to manage the borrowing and returning process in a library.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
