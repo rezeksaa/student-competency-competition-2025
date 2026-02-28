@@ -74,6 +74,17 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-right-radius: 6px;
   }
 
+  .project-screenshot {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid #30363d;
+    margin-bottom: 12px;
+    display: block;
+    background: #161b22;
+  }
+  
   .project-desc {
     color: #8b949e;
     font-size: 0.95em;
@@ -141,6 +152,8 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 01: Geegy</summary>
     <div class="expand-content">
+      <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Screenshot" class="project-screenshot">
+      <img src="./assets/Screenshots/Geegy-1.png" alt="Geegy Screenshot" class="project-screenshot">
       <div class="project-desc">A mobile app for dental clinic employees to see the daily report of clinic appointments.</div>
       <div class="link-container">
         <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
@@ -152,6 +165,10 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
+      <img src="./Assets/Screenshots/EsemkaLibrary" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-1" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-2" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaLibrary-3" alt="Library Screenshot" class="project-screenshot">
       <div class="project-desc">A desktop application used to manage the borrowing and returning process in a library.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
@@ -163,6 +180,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
+      <img src="./Assets/Screenshots/EsemkaVote" alt="Library Screenshot" class="project-screenshot">
       <div class="project-desc">A desktop application used to help employees vote on company events.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
