@@ -74,29 +74,28 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-right-radius: 6px;
   }
 
-  /* Carousel Styles */
+  /* Carousel Wrapper and Buttons */
+  .carousel-wrapper {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
   .carousel-container {
     display: flex;
     overflow-x: auto;
     gap: 12px;
-    padding-bottom: 12px;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: #30363d transparent;
+    scrollbar-width: none; /* Hide for cleaner look */
+    -ms-overflow-style: none;
   }
 
   .carousel-container::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .carousel-container::-webkit-scrollbar-thumb {
-    background: #30363d;
-    border-radius: 10px;
+    display: none;
   }
 
   .project-screenshot {
     flex: 0 0 auto;
-    width: 85%;
+    width: 100%;
     max-height: 400px;
     object-fit: contain;
     border-radius: 4px;
@@ -105,9 +104,32 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     scroll-snap-align: center;
   }
 
-  .project-screenshot:only-child {
-    width: 100%;
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(13, 17, 23, 0.7);
+    color: white;
+    border: 1px solid #30363d;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 14px;
+    transition: background 0.2s;
   }
+
+  .nav-btn:hover {
+    background: #30363d;
+    color: #58a6ff;
+  }
+
+  .prev-btn { left: 8px; }
+  .next-btn { right: 8px; }
 
   .project-desc {
     color: #c9d1d9;
@@ -119,6 +141,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   .link-container {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .project-link {
@@ -176,14 +199,18 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 01: Geegy</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Home" class="project-screenshot">
-        <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Details" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Home" class="project-screenshot">
+          <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Details" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A mobile app for employees to view dental clinic appointment reports and logs.</div>
       <div class="link-container">
-        <a href="tree/main/problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="tree/main/solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/City/Geegy" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/City/GEEGY" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -191,16 +218,20 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/EsemkaLibrary.png" alt="Library Main" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaLibrary-1.png" alt="Library Borrowing" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Return" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library New" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/EsemkaLibrary.png" alt="Library Main" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaLibrary-1.png" alt="Library Borrowing" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Return" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library New" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A desktop application to manage library borrowing and returning processes.</div>
       <div class="link-container">
-        <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/City/Esemka Library" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/City/EsemkaLibrary" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/City/Esemka%20Library" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -208,13 +239,17 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/EsemkaVote.png" alt="Vote Main" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/EsemkaVote.png" alt="Vote Main" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A desktop application used to help employees cast votes for company events.</div>
       <div class="link-container">
-        <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/City/Esemka Vote/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/City/EsemkaVote" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/City/Esemka%20Vote" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -224,15 +259,19 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 04: HovSedhep</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/HovSedhep.png" alt="HovSedhep 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/HovSedhep-1.png" alt="HovSedhep 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/HovSedhep-2.png" alt="HovSedhep 3" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/HovSedhep.png" alt="HovSedhep 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/HovSedhep-1.png" alt="HovSedhep 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/HovSedhep-2.png" alt="HovSedhep 3" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A desktop POS system for restaurant waitresses to manage table assignments and view transaction history.</div>
       <div class="link-container">
-        <a href="./problems/Provincial/HovSedhep/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/Provincial/HovSedhep/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/Provincial/HovSedhep" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/Provincial/HovSedhep" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -242,8 +281,8 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     <div class="expand-content">
       <div class="project-desc">A RESTful API backend for an ed-tech startup to manage course listings, authentication, and secure purchases.</div>
       <div class="link-container">
-        <a href="./problems/Provincial/GrowthSeekerAcademy/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/Provincial/Growth Seeker Academy/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/Provincial/GrowthSeekerAcademy" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/Provincial/Growth%20Seeker%20Academy" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -251,20 +290,24 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 06: Gawe-an</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/GaweAn.png" alt="GaweAn 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-1.png" alt="GaweAn 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-2.png" alt="GaweAn 3" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-3.png" alt="GaweAn 4" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-4.png" alt="GaweAn 5" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-5.png" alt="GaweAn 6" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-6.png" alt="GaweAn 7" class="project-screenshot">
-        <img src="./Assets/Screenshots/GaweAn-7.png" alt="GaweAn 8" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/GaweAn.png" alt="GaweAn 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-1.png" alt="GaweAn 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-2.png" alt="GaweAn 3" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-3.png" alt="GaweAn 4" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-4.png" alt="GaweAn 5" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-5.png" alt="GaweAn 6" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-6.png" alt="GaweAn 7" class="project-screenshot">
+          <img src="./Assets/Screenshots/GaweAn-7.png" alt="GaweAn 8" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">An Android application for job seekers to browse, apply for, and track job opportunities.</div>
       <div class="link-container">
-        <a href="./problems/Provincial/Gawe-an/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/Provincial/Gawe-an/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/Provincial/Gawe-an" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/Provincial/Gawe-an" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -275,26 +318,34 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     <summary>System 07: MBCA (Museum Bernis Ches Ainstein)</summary>
     <div class="expand-content">
       <p style="color: #f0f6fc; font-weight: 600; margin-bottom: 8px;">Desktop Admin Panel</p>
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/MBCA.png" alt="MBCA Desktop 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-1.png" alt="MBCA Desktop 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-2.png" alt="MBCA Desktop 3" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-3.png" alt="MBCA Desktop 4" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-4.png" alt="MBCA Desktop 5" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/MBCA.png" alt="MBCA Desktop 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-1.png" alt="MBCA Desktop 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-2.png" alt="MBCA Desktop 3" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-3.png" alt="MBCA Desktop 4" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-4.png" alt="MBCA Desktop 5" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       
       <p style="color: #f0f6fc; font-weight: 600; margin: 16px 0 8px;">Mobile Visitor App</p>
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/MBCA-5.png" alt="MBCA Mobile 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-6.png" alt="MBCA Mobile 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-7.png" alt="MBCA Mobile 3" class="project-screenshot">
-        <img src="./Assets/Screenshots/MBCA-8.png" alt="MBCA Mobile 4" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/MBCA-5.png" alt="MBCA Mobile 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-6.png" alt="MBCA Mobile 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-7.png" alt="MBCA Mobile 3" class="project-screenshot">
+          <img src="./Assets/Screenshots/MBCA-8.png" alt="MBCA Mobile 4" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       
       <div class="project-desc">A complete software suite comprising desktop admin tools, a mobile visitor app, and a central API for museum management.</div>
       <div class="link-container">
-        <a href="./problems/National/MBCA/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/National/MBCA/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/National/MBCA" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/National/MBCA" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -302,18 +353,22 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 08: Runnerly</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/runnerly.png" alt="Runnerly 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/runnerly-1.png" alt="Runnerly 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/runnerly-2.png" alt="Runnerly 3" class="project-screenshot">
-        <img src="./Assets/Screenshots/runnerly-3.png" alt="Runnerly 4" class="project-screenshot">
-        <img src="./Assets/Screenshots/runnerly-4.png" alt="Runnerly 5" class="project-screenshot">
-        <img src="./Assets/Screenshots/runnerly-5.png" alt="Runnerly 6" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/runnerly.png" alt="Runnerly 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/runnerly-1.png" alt="Runnerly 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/runnerly-2.png" alt="Runnerly 3" class="project-screenshot">
+          <img src="./Assets/Screenshots/runnerly-3.png" alt="Runnerly 4" class="project-screenshot">
+          <img src="./Assets/Screenshots/runnerly-4.png" alt="Runnerly 5" class="project-screenshot">
+          <img src="./Assets/Screenshots/runnerly-5.png" alt="Runnerly 6" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A mobile application for logging personal runs and competing in time-bound community challenges.</div>
       <div class="link-container">
-        <a href="./problems/National/Runnerly/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/National/Runnerly/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/National/Runnerly" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/National/Runnerly" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -321,16 +376,20 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 09: Esemka School Management System</summary>
     <div class="expand-content">
-      <div class="carousel-container">
-        <img src="./Assets/Screenshots/EsemkaSchool.png" alt="EsemkaSchool 1" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaSchool-1.png" alt="EsemkaSchool 2" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaSchool-2.png" alt="EsemkaSchool 3" class="project-screenshot">
-        <img src="./Assets/Screenshots/EsemkaSchool-3.png" alt="EsemkaSchool 4" class="project-screenshot">
+      <div class="carousel-wrapper">
+        <button class="nav-btn prev-btn" onclick="slide(this, -1)">❮</button>
+        <div class="carousel-container">
+          <img src="./Assets/Screenshots/EsemkaSchool.png" alt="EsemkaSchool 1" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaSchool-1.png" alt="EsemkaSchool 2" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaSchool-2.png" alt="EsemkaSchool 3" class="project-screenshot">
+          <img src="./Assets/Screenshots/EsemkaSchool-3.png" alt="EsemkaSchool 4" class="project-screenshot">
+        </div>
+        <button class="nav-btn next-btn" onclick="slide(this, 1)">❯</button>
       </div>
       <div class="project-desc">A desktop management system to automate student records, attendance tracking, and grading for vocational schools.</div>
       <div class="link-container">
-        <a href="./problems/National/EsemkaSchool/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/National/EsemkaSchool/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/problems/National/EsemkaSchool" class="project-link"><span>📄</span> View Problem</a>
+        <a href="https://github.com/rezeksaa/student-competency-competition-2025/tree/main/solutions/National/EsemkaSchool" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
@@ -340,3 +399,14 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   </div>
 
 </div>
+
+<script>
+  function slide(btn, direction) {
+    const container = btn.parentElement.querySelector('.carousel-container');
+    const scrollAmount = container.clientWidth;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
