@@ -180,7 +180,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/EsemkaVote" alt="Library Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/EsemkaVote.png" alt="Library Screenshot" class="project-screenshot">
       <div class="project-desc">A desktop application used to help employees vote on company events.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
