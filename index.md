@@ -74,6 +74,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-right-radius: 6px;
   }
 
+  /* Carousel Styles */
   .carousel-container {
     display: flex;
     overflow-x: auto;
@@ -109,7 +110,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   }
 
   .project-desc {
-    color: #c9d1d9; /* Normal text color */
+    color: #c9d1d9;
     font-size: 0.95em;
     margin: 12px 0;
     line-height: 1.4;
@@ -223,9 +224,11 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 04: HovSedhep</summary>
     <div class="expand-content">
-        <img src="./Assets/Screenshots/HovSedhep.png" alt="Geegy Home" class="project-screenshot">
-        <img src="./Assets/Screenshots/HovSedhep-1.png" alt="Geegy Home" class="project-screenshot">
-        <img src="./Assets/Screenshots/HovSedhep-2.png" alt="Geegy Home" class="project-screenshot">
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/HovSedhep.png" alt="HovSedhep 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/HovSedhep-1.png" alt="HovSedhep 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/HovSedhep-2.png" alt="HovSedhep 3" class="project-screenshot">
+      </div>
       <div class="project-desc">A desktop POS system for restaurant waitresses to manage table assignments and view transaction history.</div>
       <div class="link-container">
         <a href="./problems/Provincial/HovSedhep/" class="project-link"><span>📄</span> View Problem</a>
@@ -248,14 +251,16 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 06: Gawe-an</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/GaweAn.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-1.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-2.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-3.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-4.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-5.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-6.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/GaweAn-7.png" alt="Geegy Home" class="project-screenshot">
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/GaweAn.png" alt="GaweAn 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-1.png" alt="GaweAn 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-2.png" alt="GaweAn 3" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-3.png" alt="GaweAn 4" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-4.png" alt="GaweAn 5" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-5.png" alt="GaweAn 6" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-6.png" alt="GaweAn 7" class="project-screenshot">
+        <img src="./Assets/Screenshots/GaweAn-7.png" alt="GaweAn 8" class="project-screenshot">
+      </div>
       <div class="project-desc">An Android application for job seekers to browse, apply for, and track job opportunities.</div>
       <div class="link-container">
         <a href="./problems/Provincial/Gawe-an/" class="project-link"><span>📄</span> View Problem</a>
@@ -269,11 +274,23 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 07: MBCA (Museum Bernis Ches Ainstein)</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/MBCA.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/MBCA-1.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/MBCA-2.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/MBCA-3.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/MBCA-4.png" alt="Geegy Home" class="project-screenshot">
+      <p style="color: #f0f6fc; font-weight: 600; margin-bottom: 8px;">Desktop Admin Panel</p>
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/MBCA.png" alt="MBCA Desktop 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-1.png" alt="MBCA Desktop 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-2.png" alt="MBCA Desktop 3" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-3.png" alt="MBCA Desktop 4" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-4.png" alt="MBCA Desktop 5" class="project-screenshot">
+      </div>
+      
+      <p style="color: #f0f6fc; font-weight: 600; margin: 16px 0 8px;">Mobile Visitor App</p>
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/MBCA-5.png" alt="MBCA Mobile 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-6.png" alt="MBCA Mobile 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-7.png" alt="MBCA Mobile 3" class="project-screenshot">
+        <img src="./Assets/Screenshots/MBCA-8.png" alt="MBCA Mobile 4" class="project-screenshot">
+      </div>
+      
       <div class="project-desc">A complete software suite comprising desktop admin tools, a mobile visitor app, and a central API for museum management.</div>
       <div class="link-container">
         <a href="./problems/National/MBCA/" class="project-link"><span>📄</span> View Problem</a>
@@ -285,12 +302,14 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 08: Runnerly</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/runnerly.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/runnerly-1.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/runnerly-2.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/runnerly-3.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/runnerly-4.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/runnerly-5.png" alt="Geegy Home" class="project-screenshot">
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/runnerly.png" alt="Runnerly 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/runnerly-1.png" alt="Runnerly 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/runnerly-2.png" alt="Runnerly 3" class="project-screenshot">
+        <img src="./Assets/Screenshots/runnerly-3.png" alt="Runnerly 4" class="project-screenshot">
+        <img src="./Assets/Screenshots/runnerly-4.png" alt="Runnerly 5" class="project-screenshot">
+        <img src="./Assets/Screenshots/runnerly-5.png" alt="Runnerly 6" class="project-screenshot">
+      </div>
       <div class="project-desc">A mobile application for logging personal runs and competing in time-bound community challenges.</div>
       <div class="link-container">
         <a href="./problems/National/Runnerly/" class="project-link"><span>📄</span> View Problem</a>
@@ -302,10 +321,12 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 09: Esemka School Management System</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/EsemkaSchool.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaSchool-1.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaSchool-2.png" alt="Geegy Home" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaSchool-3.png" alt="Geegy Home" class="project-screenshot">
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/EsemkaSchool.png" alt="EsemkaSchool 1" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaSchool-1.png" alt="EsemkaSchool 2" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaSchool-2.png" alt="EsemkaSchool 3" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaSchool-3.png" alt="EsemkaSchool 4" class="project-screenshot">
+      </div>
       <div class="project-desc">A desktop management system to automate student records, attendance tracking, and grading for vocational schools.</div>
       <div class="link-container">
         <a href="./problems/National/EsemkaSchool/" class="project-link"><span>📄</span> View Problem</a>
