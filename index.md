@@ -153,7 +153,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     <summary>System 01: Geegy</summary>
     <div class="expand-content">
       <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Screenshot" class="project-screenshot">
-      <img src="./assets/Screenshots/Geegy-1.png" alt="Geegy Screenshot" class="project-screenshot">
+      <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Screenshot" class="project-screenshot">
       <div class="project-desc">A mobile app for dental clinic employees to see the daily report of clinic appointments.</div>
       <div class="link-container">
         <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
