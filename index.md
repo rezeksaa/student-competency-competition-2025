@@ -182,8 +182,8 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
       </div>
       <div class="project-desc">A mobile app for employees to view dental clinic appointment reports and logs.</div>
       <div class="link-container">
-        <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
-        <a href="./solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
+        <a href="tree/main/problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="tree/main/solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
       </div>
     </div>
   </details>
