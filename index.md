@@ -74,21 +74,46 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-right-radius: 6px;
   }
 
+  /* Carousel Styles */
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #30363d transparent;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 10px;
+  }
+
   .project-screenshot {
-    width: 100%;
+    flex: 0 0 auto;
+    width: 85%; /* Shows a peek of the next image */
     max-height: 400px;
     object-fit: contain;
     border-radius: 4px;
     border: 1px solid #30363d;
-    margin-bottom: 12px;
-    display: block;
     background: #161b22;
+    scroll-snap-align: center;
   }
-  
+
+  /* Single image fix */
+  .project-screenshot:only-child {
+    width: 100%;
+  }
+
   .project-desc {
     color: #8b949e;
     font-size: 0.95em;
-    margin-bottom: 12px;
+    margin: 12px 0;
     line-height: 1.4;
   }
 
@@ -152,9 +177,11 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 01: Geegy</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Screenshot" class="project-screenshot">
-      <div class="project-desc">A mobile app for dental clinic employees to see the daily report of clinic appointments.</div>
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Home" class="project-screenshot">
+        <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Details" class="project-screenshot">
+      </div>
+      [cite_start]<div class="project-desc">A mobile app for employees to view dental clinic appointment reports and logs[cite: 10, 11].</div>
       <div class="link-container">
         <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
@@ -165,11 +192,13 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/EsemkaLibrary.png" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-1.png" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Screenshot" class="project-screenshot">
-      <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library Screenshot" class="project-screenshot">
-      <div class="project-desc">A desktop application used to manage the borrowing and returning process in a library.</div>
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/EsemkaLibrary.png" alt="Library Main" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaLibrary-1.png" alt="Library Borrowing" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Return" class="project-screenshot">
+        <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library New" class="project-screenshot">
+      </div>
+      [cite_start]<div class="project-desc">A desktop application to manage library borrowing and returning processes[cite: 202, 204].</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Library" class="project-link"><span>💻</span> View Source Code</a>
@@ -180,8 +209,10 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
-      <img src="./Assets/Screenshots/EsemkaVote.png" alt="Library Screenshot" class="project-screenshot">
-      <div class="project-desc">A desktop application used to help employees vote on company events.</div>
+      <div class="carousel-container">
+        <img src="./Assets/Screenshots/EsemkaVote.png" alt="Vote Main" class="project-screenshot">
+      </div>
+      [cite_start]<div class="project-desc">A desktop application used to help employees cast votes for company events[cite: 155, 158].</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Vote/" class="project-link"><span>💻</span> View Source Code</a>
