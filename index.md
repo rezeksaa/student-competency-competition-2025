@@ -175,7 +175,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   </div>
 
   <blockquote style="padding: 1em; color: #8b949e; border-left: 0.25em solid #30363d; background: #161b22; border-radius: 6px; margin: 0 0 24px 0;">
-    Built <strong>9 complete business solutions</strong> across three competitive tiers, advancing from city to national level through scalable architecture and real-world business applicability.
+    Built <strong>9 complete business solutions</strong> across three competitive tiers, advancing from city to national level.
   </blockquote>
 
   <h2 style="font-size: 1.5em; font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid #30363d; margin-bottom: 16px;">🥇 Major Achievement</h2>
@@ -192,7 +192,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server">
   </div>
 
-  <h2 style="font-size: 1.5em; font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid #30363d; margin-top: 32px; margin-bottom: 16px;">📦 Systems Portfolio</h2>
+  <h2 style="font-size: 1.5em; font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid #30363d; margin-top: 32px; margin-bottom: 16px;">📦 Systems</h2>
 
   <h3 style="color: #f0f6fc; margin-bottom: 12px;">🏙️ City Level</h3>
   
