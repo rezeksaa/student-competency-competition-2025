@@ -141,7 +141,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 01: Geegy</summary>
     <div class="expand-content">
-      [cite_start]<div class="project-desc">A mobile app for dental clinic employees to see the daily report of clinic appointments[cite: 10, 11].</div>
+      <div class="project-desc">A mobile app for dental clinic employees to see the daily report of clinic appointments.</div>
       <div class="link-container">
         <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
@@ -152,7 +152,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 02: Esemka Library</summary>
     <div class="expand-content">
-      [cite_start]<div class="project-desc">A desktop application used to manage the borrowing and returning process in a library[cite: 202, 204].</div>
+      <div class="project-desc">A desktop application used to manage the borrowing and returning process in a library.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Library" class="project-link"><span>💻</span> View Source Code</a>
@@ -163,7 +163,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <details>
     <summary>System 03: Esemka Vote</summary>
     <div class="expand-content">
-      [cite_start]<div class="project-desc">A desktop application used to help employees vote on company events[cite: 155, 158].</div>
+      <div class="project-desc">A desktop application used to help employees vote on company events.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Vote/" class="project-link"><span>💻</span> View Source Code</a>
