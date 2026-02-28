@@ -74,7 +74,6 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     border-bottom-right-radius: 6px;
   }
 
-  /* Carousel Styles */
   .carousel-container {
     display: flex;
     overflow-x: auto;
@@ -96,7 +95,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
 
   .project-screenshot {
     flex: 0 0 auto;
-    width: 85%; /* Shows a peek of the next image */
+    width: 85%;
     max-height: 400px;
     object-fit: contain;
     border-radius: 4px;
@@ -105,13 +104,12 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
     scroll-snap-align: center;
   }
 
-  /* Single image fix */
   .project-screenshot:only-child {
     width: 100%;
   }
 
   .project-desc {
-    color: #8b949e;
+    color: #c9d1d9; /* Normal text color */
     font-size: 0.95em;
     margin: 12px 0;
     line-height: 1.4;
@@ -181,7 +179,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
         <img src="./Assets/Screenshots/Geegy.png" alt="Geegy Home" class="project-screenshot">
         <img src="./Assets/Screenshots/Geegy-1.png" alt="Geegy Details" class="project-screenshot">
       </div>
-      [cite_start]<div class="project-desc">A mobile app for employees to view dental clinic appointment reports and logs[cite: 10, 11].</div>
+      <div class="project-desc">A mobile app for employees to view dental clinic appointment reports and logs.</div>
       <div class="link-container">
         <a href="./problems/City/Geegy/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/GEEGY/" class="project-link"><span>💻</span> View Source Code</a>
@@ -198,7 +196,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
         <img src="./Assets/Screenshots/EsemkaLibrary-2.png" alt="Library Return" class="project-screenshot">
         <img src="./Assets/Screenshots/EsemkaLibrary-3.png" alt="Library New" class="project-screenshot">
       </div>
-      [cite_start]<div class="project-desc">A desktop application to manage library borrowing and returning processes[cite: 202, 204].</div>
+      <div class="project-desc">A desktop application to manage library borrowing and returning processes.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaLibrary/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Library" class="project-link"><span>💻</span> View Source Code</a>
@@ -212,7 +210,7 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
       <div class="carousel-container">
         <img src="./Assets/Screenshots/EsemkaVote.png" alt="Vote Main" class="project-screenshot">
       </div>
-      [cite_start]<div class="project-desc">A desktop application used to help employees cast votes for company events[cite: 155, 158].</div>
+      <div class="project-desc">A desktop application used to help employees cast votes for company events.</div>
       <div class="link-container">
         <a href="./problems/City/EsemkaVote/" class="project-link"><span>📄</span> View Problem</a>
         <a href="./solutions/City/Esemka Vote/" class="project-link"><span>💻</span> View Source Code</a>
@@ -223,46 +221,70 @@ title: Muhammad Rezky Eksatama | National Gold Medalist
   <h3 style="color: #f0f6fc; margin-top: 24px; margin-bottom: 12px;">🏛️ Provincial Level</h3>
   
   <details>
-    <summary>System 04: [Project Name]</summary>
+    <summary>System 04: HovSedhep</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+      <div class="project-desc">A desktop POS system for restaurant waitresses to manage table assignments and view transaction history.</div>
+      <div class="link-container">
+        <a href="./problems/Provincial/HovSedhep/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/Provincial/HovSedhep/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
   <details>
-    <summary>System 05: [Project Name]</summary>
+    <summary>System 05: Growth Seeker Academy</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+      <div class="project-desc">A RESTful API backend for an ed-tech startup to manage course listings, authentication, and secure purchases.</div>
+      <div class="link-container">
+        <a href="./problems/Provincial/GrowthSeekerAcademy/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/Provincial/Growth Seeker Academy/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
   <details>
-    <summary>System 06: [Project Name]</summary>
+    <summary>System 06: Gawe-an</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Coming soon.</p>
+      <div class="project-desc">An Android application for job seekers to browse, apply for, and track job opportunities.</div>
+      <div class="link-container">
+        <a href="./problems/Provincial/Gawe-an/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/Provincial/Gawe-an/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
   <h3 style="color: #f0f6fc; margin-top: 24px; margin-bottom: 12px;">🏅 National Level</h3>
   
   <details>
-    <summary>System 07: [Project Name]</summary>
+    <summary>System 07: MBCA (Museum Bernis Ches Ainstein)</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+      <div class="project-desc">A complete software suite comprising desktop admin tools, a mobile visitor app, and a central API for museum management.</div>
+      <div class="link-container">
+        <a href="./problems/National/MBCA/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/National/MBCA/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
   <details>
-    <summary>System 08: [Project Name]</summary>
+    <summary>System 08: Runnerly</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+      <div class="project-desc">A mobile application for logging personal runs and competing in time-bound community challenges.</div>
+      <div class="link-container">
+        <a href="./problems/National/Runnerly/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/National/Runnerly/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
   <details>
-    <summary>System 09: [Project Name]</summary>
+    <summary>System 09: Esemka School Management System</summary>
     <div class="expand-content">
-      <p style="color: #8b949e; font-size: 0.9em; margin: 0;">Locked until upload.</p>
+      <div class="project-desc">A desktop management system to automate student records, attendance tracking, and grading for vocational schools.</div>
+      <div class="link-container">
+        <a href="./problems/National/EsemkaSchool/" class="project-link"><span>📄</span> View Problem</a>
+        <a href="./solutions/National/EsemkaSchool/" class="project-link"><span>💻</span> View Source Code</a>
+      </div>
     </div>
   </details>
 
